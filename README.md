@@ -1,2 +1,1 @@
-# Programaci-n-clase
-# Programaci-n-clase
+# Programaci-n-de-clase
