@@ -21,6 +21,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.JTree;
 import javax.swing.UIManager;
+import javax.swing.ImageIcon;
 
 public class Login extends JFrame {
 
@@ -64,14 +65,16 @@ public class Login extends JFrame {
 		contentPane.setLayout(null);
 		
 		lblNewLabel = new JLabel("Usuario");
-		lblNewLabel.setBounds(35, 63, 67, 20);
-		lblNewLabel.setFont(new Font("Comic Sans MS", Font.PLAIN, 17));
+		lblNewLabel.setForeground(Color.GREEN);
+		lblNewLabel.setBounds(29, 63, 93, 20);
+		lblNewLabel.setFont(new Font("Arial Black", Font.PLAIN, 17));
 		lblNewLabel.setVerticalAlignment(SwingConstants.BOTTOM);
 		contentPane.add(lblNewLabel);
 		
 		lblNewLabel_1 = new JLabel("Contraseña");
-		lblNewLabel_1.setFont(new Font("Comic Sans MS", Font.PLAIN, 17));
-		lblNewLabel_1.setBounds(35, 94, 93, 20);
+		lblNewLabel_1.setForeground(Color.GREEN);
+		lblNewLabel_1.setFont(new Font("Arial Black", Font.PLAIN, 17));
+		lblNewLabel_1.setBounds(10, 95, 112, 20);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setVerticalAlignment(SwingConstants.BOTTOM);
 		contentPane.add(lblNewLabel_1);
@@ -98,7 +101,7 @@ public class Login extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel_2 = new JLabel("Iniciar Sesión");
-		lblNewLabel_2.setForeground(Color.BLACK);
+		lblNewLabel_2.setForeground(Color.GREEN);
 		lblNewLabel_2.setFont(new Font("Arial Black", Font.PLAIN, 31));
 		lblNewLabel_2.setBounds(132, 11, 257, 27);
 		contentPane.add(lblNewLabel_2);
@@ -116,9 +119,14 @@ public class Login extends JFrame {
 		btnNewButton_2 = new JButton("He olvidado la contraseña");
 		btnNewButton_2.setForeground(Color.BLUE);
 		btnNewButton_2.setBorder(null);
-		btnNewButton_2.setBackground(UIManager.getColor("InternalFrame.inactiveBorderColor"));
+		btnNewButton_2.setBackground(UIManager.getColor("InternalFrame.borderColor"));
 		btnNewButton_2.setBounds(308, 115, 166, 23);
 		contentPane.add(btnNewButton_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("New label");
+		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\pra00\\eclipse-workspace\\Pablo_3º_Trimestre\\src\\Imagenlogin\\thumb-1920-981156.jpg"));
+		lblNewLabel_3.setBounds(-648, -59, 1180, 320);
+		contentPane.add(lblNewLabel_3);
 		
 		btnNewButton_1.addActionListener (new ActionListener() {
 			public void actionPerformed (ActionEvent e) {
