@@ -1,0 +1,7 @@
+echo "# Programaci-n-de-clase" >> README.md
+git init
+git add README.md
+git commit -m "Actividades Programación"
+git branch -M main
+git remote add origin https://github.com/PabloRuizAnguita/Programacion-clase.git
+git push -u origin main
