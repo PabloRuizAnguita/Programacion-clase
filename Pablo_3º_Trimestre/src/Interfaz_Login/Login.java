@@ -66,7 +66,7 @@ public class Login extends JFrame {
 		
 		lblNewLabel = new JLabel("Usuario");
 		lblNewLabel.setForeground(Color.GREEN);
-		lblNewLabel.setBounds(29, 63, 93, 20);
+		lblNewLabel.setBounds(10, 64, 93, 20);
 		lblNewLabel.setFont(new Font("Arial Black", Font.PLAIN, 17));
 		lblNewLabel.setVerticalAlignment(SwingConstants.BOTTOM);
 		contentPane.add(lblNewLabel);
@@ -74,13 +74,13 @@ public class Login extends JFrame {
 		lblNewLabel_1 = new JLabel("Contraseña");
 		lblNewLabel_1.setForeground(Color.GREEN);
 		lblNewLabel_1.setFont(new Font("Arial Black", Font.PLAIN, 17));
-		lblNewLabel_1.setBounds(10, 95, 112, 20);
+		lblNewLabel_1.setBounds(10, 96, 112, 20);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setVerticalAlignment(SwingConstants.BOTTOM);
 		contentPane.add(lblNewLabel_1);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(170, 96, 244, 20);
+		passwordField.setBounds(159, 96, 244, 20);
 		passwordField.setColumns(10);
 		contentPane.add(passwordField);
 		
@@ -107,7 +107,7 @@ public class Login extends JFrame {
 		contentPane.add(lblNewLabel_2);
 		
 		textField = new JTextField();
-		textField.setBounds(132, 64, 282, 20);
+		textField.setBounds(113, 64, 282, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
