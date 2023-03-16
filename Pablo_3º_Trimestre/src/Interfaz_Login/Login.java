@@ -22,18 +22,20 @@ import java.awt.Color;
 import javax.swing.JTree;
 import javax.swing.UIManager;
 import javax.swing.ImageIcon;
+import javax.swing.JRadioButton;
 
 public class Login extends JFrame {
 
 	private JPanel contentPane;
-	private JLabel lblNewLabel;
-	private JLabel lblNewLabel_1;
-	private JPasswordField passwordField;
-	private JButton btnNewButton;
-	private JTextField textField;
+	private JLabel Usuario_login;
+	private JLabel Contraseña_login;
+	private JPasswordField Introducir_contraseña_login;
+	private JButton Login_login;
+	private JTextField Introducir_usuario_login;
 	
-	static Login login;
-	private JButton btnNewButton_2;
+	static Login log;
+	private JButton Olvidar_contraseña;
+	private JLabel Fondo_login;
 	/**
 	 * Launch the application.
 	 */
@@ -41,8 +43,8 @@ public class Login extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					login = new Login();
-					login.setVisible(true);
+					log = new Login();
+					log.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -64,32 +66,33 @@ public class Login extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		lblNewLabel = new JLabel("Usuario");
-		lblNewLabel.setForeground(Color.GREEN);
-		lblNewLabel.setBounds(10, 64, 93, 20);
-		lblNewLabel.setFont(new Font("Arial Black", Font.PLAIN, 17));
-		lblNewLabel.setVerticalAlignment(SwingConstants.BOTTOM);
-		contentPane.add(lblNewLabel);
+		Usuario_login = new JLabel("Usuario");
+		Usuario_login.setForeground(new Color(205, 133, 63));
+		Usuario_login.setBounds(10, 64, 93, 20);
+		Usuario_login.setFont(new Font("Arial Black", Font.PLAIN, 17));
+		Usuario_login.setVerticalAlignment(SwingConstants.BOTTOM);
+		contentPane.add(Usuario_login);
 		
-		lblNewLabel_1 = new JLabel("Contraseña");
-		lblNewLabel_1.setForeground(Color.GREEN);
-		lblNewLabel_1.setFont(new Font("Arial Black", Font.PLAIN, 17));
-		lblNewLabel_1.setBounds(10, 96, 112, 20);
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setVerticalAlignment(SwingConstants.BOTTOM);
-		contentPane.add(lblNewLabel_1);
+		Contraseña_login = new JLabel("Contraseña");
+		Contraseña_login.setForeground(new Color(205, 133, 63));
+		Contraseña_login.setFont(new Font("Arial Black", Font.PLAIN, 17));
+		Contraseña_login.setBounds(10, 96, 112, 20);
+		Contraseña_login.setHorizontalAlignment(SwingConstants.CENTER);
+		Contraseña_login.setVerticalAlignment(SwingConstants.BOTTOM);
+		contentPane.add(Contraseña_login);
 		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(159, 96, 244, 20);
-		passwordField.setColumns(10);
-		contentPane.add(passwordField);
+		Introducir_contraseña_login = new JPasswordField();
+		Introducir_contraseña_login.setEchoChar('*');
+		Introducir_contraseña_login.setBounds(159, 96, 244, 20);
+		Introducir_contraseña_login.setColumns(10);
+		contentPane.add(Introducir_contraseña_login);
 		
-		btnNewButton = new JButton("Login");
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnNewButton.setBounds(138, 149, 105, 23);
-		btnNewButton.addActionListener(new ActionListener() {
+		Login_login = new JButton("Login");
+		Login_login.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		Login_login.setBounds(132, 191, 105, 23);
+		Login_login.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				btnNewButton.addActionListener(new ActionListener() {
+				Login_login.addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						JOptionPane.showMessageDialog(contentPane, "Ha iniciado sesión correctamente", "Inicio de sesión", JOptionPane.INFORMATION_MESSAGE);
@@ -98,49 +101,74 @@ public class Login extends JFrame {
 				});
 			}
 		});
-		contentPane.add(btnNewButton);
+		contentPane.add(Login_login);
 		
-		JLabel lblNewLabel_2 = new JLabel("Iniciar Sesión");
-		lblNewLabel_2.setForeground(Color.GREEN);
-		lblNewLabel_2.setFont(new Font("Arial Black", Font.PLAIN, 31));
-		lblNewLabel_2.setBounds(132, 11, 257, 27);
-		contentPane.add(lblNewLabel_2);
+		JLabel Titulo_login = new JLabel("Iniciar Sesión");
+		Titulo_login.setForeground(new Color(0, 255, 0));
+		Titulo_login.setFont(new Font("Arial Black", Font.PLAIN, 27));
+		Titulo_login.setBounds(142, 11, 257, 27);
+		contentPane.add(Titulo_login);
 		
-		textField = new JTextField();
-		textField.setBounds(113, 64, 282, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		Introducir_usuario_login = new JTextField();
+		Introducir_usuario_login.setBounds(113, 64, 282, 20);
+		contentPane.add(Introducir_usuario_login);
+		Introducir_usuario_login.setColumns(10);
 		
-		JButton btnNewButton_1 = new JButton("Registrarse");
-		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnNewButton_1.setBounds(275, 149, 105, 23);
-		contentPane.add(btnNewButton_1);
+		JButton Registrar_login = new JButton("Registrarse");
+		Registrar_login.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		Registrar_login.setBounds(284, 191, 105, 23);
+		contentPane.add(Registrar_login);
 		
-		btnNewButton_2 = new JButton("He olvidado la contraseña");
-		btnNewButton_2.setForeground(Color.BLUE);
-		btnNewButton_2.setBorder(null);
-		btnNewButton_2.setBackground(UIManager.getColor("InternalFrame.borderColor"));
-		btnNewButton_2.setBounds(308, 115, 166, 23);
-		contentPane.add(btnNewButton_2);
+		Olvidar_contraseña = new JButton("He olvidado la contraseña");
+		Olvidar_contraseña.setForeground(Color.BLUE);
+		Olvidar_contraseña.setBorder(null);
+		Olvidar_contraseña.setBackground(UIManager.getColor("InternalFrame.borderColor"));
+		Olvidar_contraseña.setBounds(86, 123, 166, 23);
+		contentPane.add(Olvidar_contraseña);
 		
-		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\pra00\\eclipse-workspace\\Pablo_3º_Trimestre\\src\\Imagenlogin\\thumb-1920-981156.jpg"));
-		lblNewLabel_3.setBounds(-648, -59, 1180, 320);
-		contentPane.add(lblNewLabel_3);
+		JRadioButton Mostrar_contraseña = new JRadioButton("Mostrar contraseña\r\n");
+		Mostrar_contraseña.addActionListener(new ActionListener() {
+			boolean activo= false;
+	        public void actionPerformed(ActionEvent e) {
+
+	            if(!activo) {
+	                activo=true;
+	                Introducir_contraseña_login.setEchoChar((char)(0));
+
+	            }else {
+	                activo=false;
+	                Introducir_contraseña_login.setEchoChar('*');
+
+	            }
+
+
+	        }
+	    });
 		
-		btnNewButton_1.addActionListener (new ActionListener() {
+		Mostrar_contraseña.setForeground(Color.BLUE);
+		Mostrar_contraseña.setBounds(335, 123, 131, 23);
+		contentPane.add(Mostrar_contraseña);
+		
+		Fondo_login = new JLabel("New label");
+		Fondo_login.setIcon(new ImageIcon("C:\\Users\\pra00\\eclipse-workspace\\Pablo_3º_Trimestre\\src\\Imagenlogin\\nature-3082832_640.jpg"));
+		Fondo_login.setBounds(0, 0, 484, 261);
+		contentPane.add(Fondo_login);
+		
+		
+		
+		Registrar_login.addActionListener (new ActionListener() {
 			public void actionPerformed (ActionEvent e) {
-				JFrame frame = new Ventana_de_registrarse();
+				JFrame frame = new Ventana_registro();
 				frame.setVisible (true);
-				login.setVisible (false);
+				log.setVisible (false);
 			}
 		});
 		
-		btnNewButton_2.addActionListener (new ActionListener() {
+		Olvidar_contraseña.addActionListener (new ActionListener() {
 			public void actionPerformed (ActionEvent e) {
-				JFrame frame = new Pagina_Recuperacion_Contraseña();
+				JFrame frame = new Pagina_Recuperacion();
 				frame.setVisible (true);
-				login.setVisible (false);
+				log.setVisible (false);
 			}
 		});
 	}
