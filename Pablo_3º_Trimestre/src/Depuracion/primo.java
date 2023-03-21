@@ -8,6 +8,10 @@ public class primo {
 		boolean resultado = true;
 		Scanner S = new Scanner(System.in);
 
+		
+		try {
+			
+		
 		System.out.print("Introduce un número para comprobar si es primo: ");
 		num = S.nextInt();
 
@@ -23,6 +27,9 @@ public class primo {
 		else{
 			System.out.println("El número NO es primo");
 		}
+	}catch(Exception e) {
+		System.out.println("Te has equivocao campeon");
 	}
+}
 
 }
