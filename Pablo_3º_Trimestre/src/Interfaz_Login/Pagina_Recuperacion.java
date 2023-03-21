@@ -20,7 +20,7 @@ import javax.swing.UIManager;
 public class Pagina_Recuperacion extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField Introducir_correo_recupericion;
+	private JTextField introducir_correo_recupericion;
 
 	/**
 	 * Launch the application.
@@ -51,37 +51,41 @@ public class Pagina_Recuperacion extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel Introducir_correo_recuperacion = new JLabel("Introduzca su correo");
-		Introducir_correo_recuperacion.setForeground(new Color(205, 133, 63));
-		Introducir_correo_recuperacion.setFont(new Font("Arial Black", Font.PLAIN, 14));
-		Introducir_correo_recuperacion.setBounds(10, 70, 162, 14);
-		contentPane.add(Introducir_correo_recuperacion);
+		JLabel correo_recuperacion = new JLabel("Introduzca su correo");
+		correo_recuperacion.setForeground(new Color(205, 133, 63));
+		correo_recuperacion.setFont(new Font("Arial Black", Font.PLAIN, 14));
+		correo_recuperacion.setBounds(10, 70, 162, 14);
+		contentPane.add(correo_recuperacion);
 		
-		JLabel Titulo_recuperacion = new JLabel("Recuperación De Contraseña");
-		Titulo_recuperacion.setForeground(Color.GREEN);
-		Titulo_recuperacion.setBounds(49, 11, 333, 31);
-		Titulo_recuperacion.setFont(new Font("Arial Black", Font.PLAIN, 21));
-		contentPane.add(Titulo_recuperacion);
+		JLabel titulo_recuperacion = new JLabel("Recuperación De Contraseña");
+		titulo_recuperacion.setForeground(Color.GREEN);
+		titulo_recuperacion.setBounds(49, 11, 333, 31);
+		titulo_recuperacion.setFont(new Font("Arial Black", Font.PLAIN, 21));
+		contentPane.add(titulo_recuperacion);
 		
-		Introducir_correo_recupericion = new JTextField();
-		Introducir_correo_recupericion.setBounds(182, 69, 242, 20);
-		contentPane.add(Introducir_correo_recupericion);
-		Introducir_correo_recupericion.setColumns(10);
+		introducir_correo_recupericion = new JTextField();
+		introducir_correo_recupericion.setBounds(182, 69, 242, 20);
+		contentPane.add(introducir_correo_recupericion);
+		introducir_correo_recupericion.setColumns(10);
 		
-		JButton Boton_recuperacion = new JButton("Enviar Código De Recuperación");
-		Boton_recuperacion.setBounds(87, 128, 242, 23);
-		contentPane.add(Boton_recuperacion);
+		JButton boton_recuperacion = new JButton("Enviar Código De Recuperación");
+		boton_recuperacion.setBounds(87, 128, 242, 23);
+		contentPane.add(boton_recuperacion);
 		
-		JLabel Fondo_recuperacion = new JLabel("New label");
-		Fondo_recuperacion.setIcon(new ImageIcon("C:\\Users\\pra00\\eclipse-workspace\\Pablo_3º_Trimestre\\src\\Imagenlogin\\nature-3082832_640.jpg"));
-		Fondo_recuperacion.setBounds(0, 0, 434, 261);
-		contentPane.add(Fondo_recuperacion);
+		JLabel fondo_recuperacion = new JLabel("New label");
+		fondo_recuperacion.setIcon(new ImageIcon("C:\\Users\\pra00\\eclipse-workspace\\Pablo_3º_Trimestre\\src\\Imagenlogin\\nature-3082832_640.jpg"));
+		fondo_recuperacion.setBounds(0, 0, 434, 261);
+		contentPane.add(fondo_recuperacion);
 		
-		Boton_recuperacion.addActionListener(new ActionListener() {
-			@Override
+		boton_recuperacion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(contentPane, "Se ha enviado correctamente el código de recuperación", "Recuperación", JOptionPane.INFORMATION_MESSAGE);
 				
+				if (introducir_correo_recupericion.getText().length()==0) {
+                    JOptionPane.showMessageDialog(contentPane, "Por favor vuelva a introducir el correo electrónico.", "Inicio de sesión", JOptionPane.ERROR_MESSAGE);
+                }else {
+					
+			JOptionPane.showMessageDialog(contentPane, "Se ha enviado correctamente el código de recuperación", "Recuperación", JOptionPane.INFORMATION_MESSAGE);
+                }
 			}
 		});
 	}

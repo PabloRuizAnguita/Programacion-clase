@@ -19,11 +19,11 @@ import javax.swing.ImageIcon;
 public class Ventana_registro extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField Insertar_nombre_registro;
-	private JTextField Insertar_apellidos_registro;
-	private JTextField Insertar_correo_registro;
-	private JTextField Insertar_usuario_registro;
-	private JTextField Insertar_contraseña_registro;
+	private JTextField insertar_nombre_registro;
+	private JTextField insertar_apellidos_registro;
+	private JTextField insertar_correo_registro;
+	private JTextField insertar_usuario_registro;
+	private JTextField insertar_contraseña_registro;
 
 	/**
 	 * Launch the application.
@@ -54,82 +54,89 @@ public class Ventana_registro extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel Titulo_registro = new JLabel("Registro De Cuenta");
-		Titulo_registro.setForeground(new Color(0, 255, 0));
-		Titulo_registro.setFont(new Font("Arial Black", Font.PLAIN, 21));
-		Titulo_registro.setBounds(117, 0, 238, 53);
-		contentPane.add(Titulo_registro);
+		JLabel titulo_registro = new JLabel("Registro De Cuenta");
+		titulo_registro.setForeground(new Color(0, 255, 0));
+		titulo_registro.setFont(new Font("Arial Black", Font.PLAIN, 21));
+		titulo_registro.setBounds(116, 0, 238, 53);
+		contentPane.add(titulo_registro);
 		
-		JLabel Nombre_registro = new JLabel("Nombre");
-		Nombre_registro.setForeground(new Color(205, 133, 63));
-		Nombre_registro.setFont(new Font("Arial Black", Font.PLAIN, 14));
-		Nombre_registro.setBounds(10, 65, 60, 14);
-		contentPane.add(Nombre_registro);
+		JLabel nombre_registro = new JLabel("Nombre");
+		nombre_registro.setForeground(new Color(205, 133, 63));
+		nombre_registro.setFont(new Font("Arial Black", Font.PLAIN, 14));
+		nombre_registro.setBounds(10, 65, 60, 14);
+		contentPane.add(nombre_registro);
 		
-		JLabel Apellidos_registro = new JLabel("Apellidos");
-		Apellidos_registro.setForeground(new Color(205, 133, 63));
-		Apellidos_registro.setFont(new Font("Arial Black", Font.PLAIN, 14));
-		Apellidos_registro.setBounds(10, 106, 81, 14);
-		contentPane.add(Apellidos_registro);
+		JLabel apellidos_registro = new JLabel("Apellidos");
+		apellidos_registro.setForeground(new Color(205, 133, 63));
+		apellidos_registro.setFont(new Font("Arial Black", Font.PLAIN, 14));
+		apellidos_registro.setBounds(10, 106, 81, 14);
+		contentPane.add(apellidos_registro);
 		
-		Insertar_nombre_registro = new JTextField();
-		Insertar_nombre_registro.setBounds(80, 64, 196, 20);
-		contentPane.add(Insertar_nombre_registro);
-		Insertar_nombre_registro.setColumns(10);
+		insertar_nombre_registro = new JTextField();
+		insertar_nombre_registro.setBounds(80, 64, 196, 20);
+		contentPane.add(insertar_nombre_registro);
+		insertar_nombre_registro.setColumns(10);
 		
-		Insertar_apellidos_registro = new JTextField();
-		Insertar_apellidos_registro.setBounds(102, 105, 196, 20);
-		contentPane.add(Insertar_apellidos_registro);
-		Insertar_apellidos_registro.setColumns(10);
+		insertar_apellidos_registro = new JTextField();
+		insertar_apellidos_registro.setBounds(102, 105, 196, 20);
+		contentPane.add(insertar_apellidos_registro);
+		insertar_apellidos_registro.setColumns(10);
 		
-		Insertar_correo_registro = new JTextField();
-		Insertar_correo_registro.setBounds(80, 142, 196, 20);
-		contentPane.add(Insertar_correo_registro);
-		Insertar_correo_registro.setColumns(10);
+		insertar_correo_registro = new JTextField();
+		insertar_correo_registro.setBounds(80, 142, 196, 20);
+		contentPane.add(insertar_correo_registro);
+		insertar_correo_registro.setColumns(10);
 		
-		Insertar_usuario_registro = new JTextField();
-		Insertar_usuario_registro.setBounds(171, 185, 196, 20);
-		contentPane.add(Insertar_usuario_registro);
-		Insertar_usuario_registro.setColumns(10);
+		insertar_usuario_registro = new JTextField();
+		insertar_usuario_registro.setBounds(171, 185, 196, 20);
+		contentPane.add(insertar_usuario_registro);
+		insertar_usuario_registro.setColumns(10);
 		
-		Insertar_contraseña_registro = new JTextField();
-		Insertar_contraseña_registro.setBounds(129, 216, 196, 20);
-		contentPane.add(Insertar_contraseña_registro);
-		Insertar_contraseña_registro.setColumns(10);
+		insertar_contraseña_registro = new JTextField();
+		insertar_contraseña_registro.setBounds(129, 216, 196, 20);
+		contentPane.add(insertar_contraseña_registro);
+		insertar_contraseña_registro.setColumns(10);
 		
-		JLabel Correo_registro = new JLabel("Correo");
-		Correo_registro.setForeground(new Color(205, 133, 63));
-		Correo_registro.setFont(new Font("Arial Black", Font.PLAIN, 14));
-		Correo_registro.setBounds(10, 143, 60, 14);
-		contentPane.add(Correo_registro);
+		JLabel correo_registro = new JLabel("Correo");
+		correo_registro.setForeground(new Color(205, 133, 63));
+		correo_registro.setFont(new Font("Arial Black", Font.PLAIN, 14));
+		correo_registro.setBounds(10, 143, 60, 14);
+		contentPane.add(correo_registro);
 		
-		JLabel Usuario_registro = new JLabel("Nombre de Usuario");
-		Usuario_registro.setForeground(new Color(205, 133, 63));
-		Usuario_registro.setFont(new Font("Arial Black", Font.PLAIN, 14));
-		Usuario_registro.setBounds(10, 186, 151, 14);
-		contentPane.add(Usuario_registro);
+		JLabel usuario_registro = new JLabel("Nombre de Usuario");
+		usuario_registro.setForeground(new Color(205, 133, 63));
+		usuario_registro.setFont(new Font("Arial Black", Font.PLAIN, 14));
+		usuario_registro.setBounds(10, 186, 151, 14);
+		contentPane.add(usuario_registro);
 		
-		JLabel Contraseña_registro = new JLabel("Contarseña");
-		Contraseña_registro.setForeground(new Color(205, 133, 63));
-		Contraseña_registro.setFont(new Font("Arial Black", Font.PLAIN, 14));
-		Contraseña_registro.setBounds(10, 217, 92, 14);
-		contentPane.add(Contraseña_registro);
+		JLabel contraseña_registro = new JLabel("Contarseña");
+		contraseña_registro.setForeground(new Color(205, 133, 63));
+		contraseña_registro.setFont(new Font("Arial Black", Font.PLAIN, 14));
+		contraseña_registro.setBounds(10, 217, 92, 14);
+		contentPane.add(contraseña_registro);
 		
-		JButton Boton_registarse_registro = new JButton("Registrarse");
-		Boton_registarse_registro.setBounds(169, 279, 110, 23);
-		contentPane.add(Boton_registarse_registro);
+		JButton boton_registarse_registro = new JButton("Registrarse");
+		boton_registarse_registro.setBounds(169, 279, 110, 23);
+		contentPane.add(boton_registarse_registro);
 		
-		JLabel Fondo_registro = new JLabel("New label");
-		Fondo_registro.setIcon(new ImageIcon("C:\\Users\\pra00\\eclipse-workspace\\Pablo_3º_Trimestre\\src\\Imagenlogin\\nature-3082832_640.jpg"));
-		Fondo_registro.setBounds(0, 0, 434, 361);
-		contentPane.add(Fondo_registro);
-		
-		Boton_registarse_registro.addActionListener(new ActionListener() {
-			@Override
+		boton_registarse_registro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(contentPane, "Su registro se han realizado con éxito", "Registro", JOptionPane.INFORMATION_MESSAGE);
-				
+			
+				if (insertar_nombre_registro.getText().length()==0 || insertar_apellidos_registro.getText().length()==0 || insertar_correo_registro.getText().length()==0 || insertar_usuario_registro.getText().length()==0 || insertar_contraseña_registro.getText().length()==0) {
+                    JOptionPane.showMessageDialog(contentPane, "Error, vuelva a introducir las credenciales.", "Registro.", JOptionPane.ERROR_MESSAGE);
+                }else {
+					
+			JOptionPane.showMessageDialog(contentPane, "Se ha registrado correctamente.", "Registro", JOptionPane.INFORMATION_MESSAGE);
+                }
 			}
-		});
+			});
+		
+		JLabel fondo_registro = new JLabel("New label");
+		fondo_registro.setIcon(new ImageIcon("C:\\Users\\pra00\\eclipse-workspace\\Pablo_3º_Trimestre\\src\\Imagenlogin\\nature-3082832_640.jpg"));
+		fondo_registro.setBounds(0, -24, 434, 410);
+		contentPane.add(fondo_registro);
+		
+		
 	}
 }
+

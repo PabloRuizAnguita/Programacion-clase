@@ -27,15 +27,15 @@ import javax.swing.JRadioButton;
 public class Login extends JFrame {
 
 	private JPanel contentPane;
-	private JLabel Usuario_login;
-	private JLabel Contraseña_login;
-	private JPasswordField Introducir_contraseña_login;
-	private JButton Login_login;
-	private JTextField Introducir_usuario_login;
+	private JLabel usuario_login;
+	private JLabel contraseña_login;
+	private JPasswordField introducir_contraseña_login;
+	private JButton login_login;
+	private JTextField introducir_usuario_login;
 	
 	static Login log;
-	private JButton Olvidar_contraseña;
-	private JLabel Fondo_login;
+	private JButton olvidar_contraseña;
+	private JLabel fondo_login;
 	/**
 	 * Launch the application.
 	 */
@@ -66,78 +66,88 @@ public class Login extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		Usuario_login = new JLabel("Usuario");
-		Usuario_login.setForeground(new Color(205, 133, 63));
-		Usuario_login.setBounds(10, 64, 93, 20);
-		Usuario_login.setFont(new Font("Arial Black", Font.PLAIN, 17));
-		Usuario_login.setVerticalAlignment(SwingConstants.BOTTOM);
-		contentPane.add(Usuario_login);
+		usuario_login = new JLabel("Usuario");
+		usuario_login.setForeground(new Color(205, 133, 63));
+		usuario_login.setBounds(10, 64, 93, 20);
+		usuario_login.setFont(new Font("Arial Black", Font.PLAIN, 17));
+		usuario_login.setVerticalAlignment(SwingConstants.BOTTOM);
+		contentPane.add(usuario_login);
 		
-		Contraseña_login = new JLabel("Contraseña");
-		Contraseña_login.setForeground(new Color(205, 133, 63));
-		Contraseña_login.setFont(new Font("Arial Black", Font.PLAIN, 17));
-		Contraseña_login.setBounds(10, 96, 112, 20);
-		Contraseña_login.setHorizontalAlignment(SwingConstants.CENTER);
-		Contraseña_login.setVerticalAlignment(SwingConstants.BOTTOM);
-		contentPane.add(Contraseña_login);
+		contraseña_login = new JLabel("Contraseña");
+		contraseña_login.setForeground(new Color(205, 133, 63));
+		contraseña_login.setFont(new Font("Arial Black", Font.PLAIN, 17));
+		contraseña_login.setBounds(10, 96, 112, 20);
+		contraseña_login.setHorizontalAlignment(SwingConstants.CENTER);
+		contraseña_login.setVerticalAlignment(SwingConstants.BOTTOM);
+		contentPane.add(contraseña_login);
 		
-		Introducir_contraseña_login = new JPasswordField();
-		Introducir_contraseña_login.setEchoChar('*');
-		Introducir_contraseña_login.setBounds(159, 96, 244, 20);
-		Introducir_contraseña_login.setColumns(10);
-		contentPane.add(Introducir_contraseña_login);
+		introducir_contraseña_login = new JPasswordField();
+		introducir_contraseña_login.setEchoChar('*');
+		introducir_contraseña_login.setBounds(159, 96, 244, 20);
+		introducir_contraseña_login.setColumns(10);
+		contentPane.add(introducir_contraseña_login);
 		
-		Login_login = new JButton("Login");
-		Login_login.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		Login_login.setBounds(132, 191, 105, 23);
-		Login_login.addActionListener(new ActionListener() {
+		login_login = new JButton("Login");
+		login_login.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		login_login.setBounds(132, 191, 105, 23);
+		login_login.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Login_login.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						JOptionPane.showMessageDialog(contentPane, "Ha iniciado sesión correctamente", "Inicio de sesión", JOptionPane.INFORMATION_MESSAGE);
-						
-					}
-				});
-			}
-		});
-		contentPane.add(Login_login);
+				
+				if (introducir_contraseña_login.getText().length()==0 || introducir_usuario_login.getText().length()==0) {
+                    JOptionPane.showMessageDialog(contentPane, "Por favor vuelva a introducir las credenciales.", "Inicio de sesión", JOptionPane.ERROR_MESSAGE);
+                }else {
+
+            JOptionPane.showMessageDialog(contentPane, "Ha iniciado sesión correctamente", "Inicio de sesión de Usuario", JOptionPane.INFORMATION_MESSAGE);
+            }									
+		}			
+	});
+			
+				
+					
+					
+					
+				
+			
 		
-		JLabel Titulo_login = new JLabel("Iniciar Sesión");
-		Titulo_login.setForeground(new Color(0, 255, 0));
-		Titulo_login.setFont(new Font("Arial Black", Font.PLAIN, 27));
-		Titulo_login.setBounds(142, 11, 257, 27);
-		contentPane.add(Titulo_login);
+		contentPane.add(login_login);
 		
-		Introducir_usuario_login = new JTextField();
-		Introducir_usuario_login.setBounds(113, 64, 282, 20);
-		contentPane.add(Introducir_usuario_login);
-		Introducir_usuario_login.setColumns(10);
+		JLabel titulo_login = new JLabel("Iniciar Sesión");
+		titulo_login.setForeground(new Color(0, 255, 0));
+		titulo_login.setFont(new Font("Arial Black", Font.PLAIN, 27));
+		titulo_login.setBounds(142, 11, 257, 27);
+		contentPane.add(titulo_login);
 		
-		JButton Registrar_login = new JButton("Registrarse");
-		Registrar_login.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		Registrar_login.setBounds(284, 191, 105, 23);
-		contentPane.add(Registrar_login);
 		
-		Olvidar_contraseña = new JButton("He olvidado la contraseña");
-		Olvidar_contraseña.setForeground(Color.BLUE);
-		Olvidar_contraseña.setBorder(null);
-		Olvidar_contraseña.setBackground(UIManager.getColor("InternalFrame.borderColor"));
-		Olvidar_contraseña.setBounds(86, 123, 166, 23);
-		contentPane.add(Olvidar_contraseña);
 		
-		JRadioButton Mostrar_contraseña = new JRadioButton("Mostrar contraseña\r\n");
-		Mostrar_contraseña.addActionListener(new ActionListener() {
+		introducir_usuario_login = new JTextField();
+		introducir_usuario_login.setBounds(113, 64, 282, 20);
+		contentPane.add(introducir_usuario_login);
+		introducir_usuario_login.setColumns(10);
+		
+		JButton registrar_login = new JButton("Registrarse");
+		registrar_login.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		registrar_login.setBounds(284, 191, 105, 23);
+		contentPane.add(registrar_login);
+		
+		olvidar_contraseña = new JButton("He olvidado la contraseña");
+		olvidar_contraseña.setForeground(Color.BLUE);
+		olvidar_contraseña.setBorder(null);
+		olvidar_contraseña.setBackground(UIManager.getColor("InternalFrame.borderColor"));
+		olvidar_contraseña.setBounds(86, 123, 166, 23);
+		contentPane.add(olvidar_contraseña);
+		
+		JRadioButton mostrar_contraseña = new JRadioButton("Mostrar contraseña\r\n");
+		mostrar_contraseña.addActionListener(new ActionListener() {
 			boolean activo= false;
 	        public void actionPerformed(ActionEvent e) {
 
 	            if(!activo) {
 	                activo=true;
-	                Introducir_contraseña_login.setEchoChar((char)(0));
+	                introducir_contraseña_login.setEchoChar((char)(0));
 
 	            }else {
 	                activo=false;
-	                Introducir_contraseña_login.setEchoChar('*');
+	                introducir_contraseña_login.setEchoChar('*');
 
 	            }
 
@@ -145,18 +155,18 @@ public class Login extends JFrame {
 	        }
 	    });
 		
-		Mostrar_contraseña.setForeground(Color.BLUE);
-		Mostrar_contraseña.setBounds(335, 123, 131, 23);
-		contentPane.add(Mostrar_contraseña);
+		mostrar_contraseña.setForeground(Color.BLUE);
+		mostrar_contraseña.setBounds(335, 123, 131, 23);
+		contentPane.add(mostrar_contraseña);
 		
-		Fondo_login = new JLabel("New label");
-		Fondo_login.setIcon(new ImageIcon("C:\\Users\\pra00\\eclipse-workspace\\Pablo_3º_Trimestre\\src\\Imagenlogin\\nature-3082832_640.jpg"));
-		Fondo_login.setBounds(0, 0, 484, 261);
-		contentPane.add(Fondo_login);
+		fondo_login = new JLabel("New label");
+		fondo_login.setIcon(new ImageIcon("C:\\Users\\pra00\\eclipse-workspace\\Pablo_3º_Trimestre\\src\\Imagenlogin\\nature-3082832_640.jpg"));
+		fondo_login.setBounds(0, 0, 484, 261);
+		contentPane.add(fondo_login);
 		
 		
 		
-		Registrar_login.addActionListener (new ActionListener() {
+		registrar_login.addActionListener (new ActionListener() {
 			public void actionPerformed (ActionEvent e) {
 				JFrame frame = new Ventana_registro();
 				frame.setVisible (true);
@@ -164,7 +174,7 @@ public class Login extends JFrame {
 			}
 		});
 		
-		Olvidar_contraseña.addActionListener (new ActionListener() {
+		olvidar_contraseña.addActionListener (new ActionListener() {
 			public void actionPerformed (ActionEvent e) {
 				JFrame frame = new Pagina_Recuperacion();
 				frame.setVisible (true);
