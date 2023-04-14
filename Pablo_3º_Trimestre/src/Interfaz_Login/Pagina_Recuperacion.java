@@ -16,6 +16,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import javax.swing.UIManager;
+import java.awt.SystemColor;
 
 public class Pagina_Recuperacion extends JFrame {
 
@@ -58,7 +59,7 @@ public class Pagina_Recuperacion extends JFrame {
 		contentPane.add(correo_recuperacion);
 		
 		JLabel titulo_recuperacion = new JLabel("Recuperación De Contraseña");
-		titulo_recuperacion.setForeground(Color.GREEN);
+		titulo_recuperacion.setForeground(SystemColor.window);
 		titulo_recuperacion.setBounds(49, 11, 333, 31);
 		titulo_recuperacion.setFont(new Font("Arial Black", Font.PLAIN, 21));
 		contentPane.add(titulo_recuperacion);
@@ -81,12 +82,15 @@ public class Pagina_Recuperacion extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				if (introducir_correo_recupericion.getText().length()==0) {
-                    JOptionPane.showMessageDialog(contentPane, "Por favor vuelva a introducir el correo electrónico.", "Inicio de sesión", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(contentPane, "Correo no introducido.", "Inicio de sesión", JOptionPane.WARNING_MESSAGE);
                 }else {
 					
+                	int cartel=JOptionPane.showConfirmDialog(boton_recuperacion, "¿Seguro que ha puesto su correo correctamente?");
+                	
+            		if(cartel==0) {
 			JOptionPane.showMessageDialog(contentPane, "Se ha enviado correctamente el código de recuperación", "Recuperación", JOptionPane.INFORMATION_MESSAGE);
                 }
 			}
-		});
+			}});
 	}
 }

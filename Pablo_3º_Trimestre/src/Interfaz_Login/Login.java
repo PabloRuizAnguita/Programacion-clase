@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import MYSQL.Conexion;
+
 import java.awt.Checkbox;
 import java.awt.TextField;
 import java.awt.Choice;
@@ -17,12 +20,17 @@ import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.JTree;
 import javax.swing.UIManager;
 import javax.swing.ImageIcon;
 import javax.swing.JRadioButton;
+import java.awt.SystemColor;
 
 public class Login extends JFrame {
 
@@ -32,10 +40,10 @@ public class Login extends JFrame {
 	private JPasswordField introducir_contraseña_login;
 	private JButton login_login;
 	private JTextField introducir_usuario_login;
-	
-	static Login log;
 	private JButton olvidar_contraseña;
 	private JLabel fondo_login;
+	
+	static Login log;
 	/**
 	 * Launch the application.
 	 */
@@ -94,25 +102,29 @@ public class Login extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				if (introducir_contraseña_login.getText().length()==0 || introducir_usuario_login.getText().length()==0) {
-                    JOptionPane.showMessageDialog(contentPane, "Por favor vuelva a introducir las credenciales.", "Inicio de sesión", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(contentPane, "¿No es tan complicado rellenar todo, no?", "Inicio de sesión", JOptionPane.WARNING_MESSAGE);
                 }else {
 
-            JOptionPane.showMessageDialog(contentPane, "Ha iniciado sesión correctamente", "Inicio de sesión de Usuario", JOptionPane.INFORMATION_MESSAGE);
+                	
+            		usuarios logeo = new usuarios();
+            		logeo.logear(introducir_usuario_login.getText(), introducir_contraseña_login.getText());
+            		
+            		if(logeo.logear(introducir_usuario_login.getText(), introducir_contraseña_login.getText())==1) {
+            			JOptionPane.showMessageDialog(contentPane, "Ha iniciado sesión correctamente", "Inicio de sesión de Usuario", JOptionPane.YES_NO_CANCEL_OPTION);
+            			break;
+            		}else {
+            			JOptionPane.showMessageDialog(contentPane, "El usuario no existe", "Inicio de sesión de Usuario", JOptionPane.WARNING_MESSAGE);
+            		}
+                                	
             }									
 		}			
 	});
 			
-				
-					
-					
-					
-				
 			
-		
 		contentPane.add(login_login);
 		
 		JLabel titulo_login = new JLabel("Iniciar Sesión");
-		titulo_login.setForeground(new Color(0, 255, 0));
+		titulo_login.setForeground(SystemColor.window);
 		titulo_login.setFont(new Font("Arial Black", Font.PLAIN, 27));
 		titulo_login.setBounds(142, 11, 257, 27);
 		contentPane.add(titulo_login);
@@ -128,6 +140,8 @@ public class Login extends JFrame {
 		registrar_login.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		registrar_login.setBounds(284, 191, 105, 23);
 		contentPane.add(registrar_login);
+		
+		
 		
 		olvidar_contraseña = new JButton("He olvidado la contraseña");
 		olvidar_contraseña.setForeground(Color.BLUE);
