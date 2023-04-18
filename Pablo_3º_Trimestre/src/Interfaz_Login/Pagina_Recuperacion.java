@@ -73,6 +73,7 @@ public class Pagina_Recuperacion extends JFrame {
 		boton_recuperacion.setBounds(87, 128, 242, 23);
 		contentPane.add(boton_recuperacion);
 		
+		
 		JLabel fondo_recuperacion = new JLabel("New label");
 		fondo_recuperacion.setIcon(new ImageIcon("C:\\Users\\pra00\\eclipse-workspace\\Pablo_3º_Trimestre\\src\\Imagenlogin\\nature-3082832_640.jpg"));
 		fondo_recuperacion.setBounds(0, 0, 434, 261);

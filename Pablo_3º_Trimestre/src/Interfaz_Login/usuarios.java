@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 import MYSQL.Conexion;
 
@@ -65,9 +67,9 @@ public class usuarios {
 
 
 
-public static void logear(String usuario, String contraseña) {
+public static boolean logear(String usuario, String contraseña) {
 	
-int resultado=0;
+boolean resultado=false;
 
 Conexion conexion = new Conexion();
 Connection cn = null;
@@ -86,9 +88,9 @@ try {
 		String Usuario = rs.getString(2);
 		String Contraseña = rs.getString(4);
 		
-			if(rs.next()) {
-				resultado=1;
-		
+			if(usuario.equals(Usuario) && contraseña.equals(Contraseña)) {
+				resultado=true;
+					
 		}		
 		}
 	
@@ -111,7 +113,8 @@ try {
 	} catch (Exception e2) {
 		e2.printStackTrace();
 	}
-}}
+	
+}return resultado;}
 
 
 
@@ -154,9 +157,68 @@ public static void borrar(String usuario) {
 						e2.printStackTrace();
 					}
 				}  
-				JOptionPane.showMessageDialog(contentPane, "Ha borrado el usuario con exito", "Registro.", JOptionPane.YES_OPTION);
+				JOptionPane.showMessageDialog(contentPane, "Ha borrado el usuario con exito", "Registro.", JOptionPane.INFORMATION_MESSAGE);
 };
+
+
+
+public static void antoniobasededatos(JTable tabla_BBDD) {
+	
+	
+
+	Conexion conexion = new Conexion();
+	Connection cn = null;
+	Statement stm = null;
+	ResultSet rs = null;
+	DefaultTableModel table = (DefaultTableModel) tabla_BBDD.getModel();
+	
+	table.getDataVector().removeAllElements();
+	
+	try {
+		cn = conexion.conectar();
+		stm = cn.createStatement();
+		rs = stm.executeQuery("SELECT * FROM pgweb");
+		
+		while (rs.next()) {
+			String Nombre = rs.getString(1);
+			String Usuario = rs.getString(2);
+			String Correo = rs.getString(3);
+			String Contraseña = rs.getString(4);
+			
+			
+			String[] usuarios_bbdd = {Nombre, Usuario, Correo, Contraseña};
+			
+			table.addRow(usuarios_bbdd);
+			
+			
+		}
+		
+	} catch (SQLException e) {
+		e.printStackTrace();
+		
+	} finally {
+		try {
+			if (rs!= null) {
+				rs.close();
+			}
+			
+			if (stm != null) {
+				stm.close();
+			}
+			
+			if (cn != null) {
+				cn.close();
+			}
+		} catch (Exception e2) {
+			e2.printStackTrace();
+		}
+	}
+	
 }
 
 
 
+
+
+
+}

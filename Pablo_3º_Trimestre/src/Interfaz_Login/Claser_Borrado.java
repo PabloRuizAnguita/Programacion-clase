@@ -24,13 +24,16 @@ import javax.swing.table.DefaultTableModel;
 import MYSQL.Conexion;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.border.TitledBorder;
 
 public class Claser_Borrado extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField usuario_borrar_introducir;
 	private JTable tabla_BBDD;
-
+	
+	
+	
 	/**
 	 * Launch the application.
 	 */
@@ -60,53 +63,105 @@ public class Claser_Borrado extends JFrame {
 		contentPane.setLayout(null);
 		
 		usuario_borrar_introducir = new JTextField();
-		usuario_borrar_introducir.setBounds(142, 208, 124, 20);
+		usuario_borrar_introducir.setBounds(142, 197, 124, 20);
 		contentPane.add(usuario_borrar_introducir);
 		usuario_borrar_introducir.setColumns(10);
+		
 		
 		JLabel usuario_borrar_letras = new JLabel("Usuario a Borrar");
 		usuario_borrar_letras.setForeground(Color.ORANGE);
 		usuario_borrar_letras.setFont(new Font("Sylfaen", Font.BOLD, 15));
-		usuario_borrar_letras.setBounds(21, 200, 111, 41);
+		usuario_borrar_letras.setBounds(21, 189, 111, 41);
 		contentPane.add(usuario_borrar_letras);
 		
 		JButton boton_borrar_borrado = new JButton("Borrar");
 		boton_borrar_borrado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				usuarios borrado = new usuarios();
-        		borrado.borrar(usuario_borrar_introducir.getText());
+				
+        		usuarios.borrar(usuario_borrar_introducir.getText());
+        		usuarios.antoniobasededatos(tabla_BBDD);
         		
 			}});
-		boton_borrar_borrado.setBounds(308, 207, 89, 23);
+		boton_borrar_borrado.setBounds(308, 196, 99, 23);
 		contentPane.add(boton_borrar_borrado);
 		
+
 		
-		
-		
-		
-		
-		
-		
-			
-		
-		
-		
-		JLabel lblNewLabel = new JLabel("Base de Datos");
-		lblNewLabel.setForeground(SystemColor.window);
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel.setBounds(141, 11, 222, 33);
-		contentPane.add(lblNewLabel);
+		JLabel Titulo_borrado = new JLabel("Base de Datos");
+		Titulo_borrado.setForeground(SystemColor.window);
+		Titulo_borrado.setFont(new Font("Tahoma", Font.BOLD, 18));
+		Titulo_borrado.setBounds(141, 11, 162, 33);
+		contentPane.add(Titulo_borrado);
 		
 		tabla_BBDD = new JTable();
+		tabla_BBDD.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		tabla_BBDD.setBackground(Color.LIGHT_GRAY);
 		tabla_BBDD.setModel(new DefaultTableModel(
 			new Object[][] {
 			},
 			new String[] {
 				"Nombre", "Usuario", "Correo", "Contrase\u00F1a"
 			}
-		));
-		tabla_BBDD.setBounds(21, 43, 378, 154);
+		) {
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+			Class[] columnTypes = new Class[] {
+				String.class, String.class, String.class, String.class
+			};
+			public Class getColumnClass(int columnIndex) {
+				return columnTypes[columnIndex];
+			}
+		});
+		
+		usuarios.antoniobasededatos(tabla_BBDD);
+		tabla_BBDD.setBounds(21, 78, 403, 97);
 		contentPane.add(tabla_BBDD);
+		
+		JButton Cerrar_serion = new JButton("Volver atrás");
+		Cerrar_serion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				 JFrame cerrar_sesion= new Login();
+				 cerrar_sesion.setVisible(true);
+		         setVisible(false);
+			}
+		});
+		Cerrar_serion.setBounds(308, 230, 99, 23);
+		contentPane.add(Cerrar_serion);
+		
+		JLabel Nombre_tabla = new JLabel("Nombre");
+		Nombre_tabla.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
+		Nombre_tabla.setForeground(Color.WHITE);
+		Nombre_tabla.setBounds(21, 65, 58, 14);
+		contentPane.add(Nombre_tabla);
+		
+		JLabel Usuario_tabla = new JLabel("Usuario");
+		Usuario_tabla.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
+		Usuario_tabla.setForeground(Color.WHITE);
+		Usuario_tabla.setBounds(124, 65, 58, 14);
+		contentPane.add(Usuario_tabla);
+		
+		JLabel Correo_tabla = new JLabel("Correo");
+		Correo_tabla.setForeground(Color.WHITE);
+		Correo_tabla.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
+		Correo_tabla.setBounds(225, 65, 46, 14);
+		contentPane.add(Correo_tabla);
+		
+		JLabel Contraseña_tabla = new JLabel("Contraseña");
+		Contraseña_tabla.setForeground(Color.WHITE);
+		Contraseña_tabla.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
+		Contraseña_tabla.setBounds(321, 65, 76, 14);
+		contentPane.add(Contraseña_tabla);
+		
+		JLabel Fondo_borrado = new JLabel("Correo");
+		Fondo_borrado.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		Fondo_borrado.setIcon(new ImageIcon("C:\\Users\\pra00\\eclipse-workspace\\Pablo_3º_Trimestre\\src\\Imagenlogin\\nature-3082832_640.jpg"));
+		Fondo_borrado.setBounds(0, 0, 434, 261);
+		contentPane.add(Fondo_borrado);
+		
+		
+		
 	}
 }

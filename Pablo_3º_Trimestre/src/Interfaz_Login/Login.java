@@ -101,22 +101,28 @@ public class Login extends JFrame {
 		login_login.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				if (introducir_contraseña_login.getText().length()==0 || introducir_usuario_login.getText().length()==0) {
+				if (introducir_usuario_login.getText().length()==0 || introducir_contraseña_login.getText().length()==0)  {
                     JOptionPane.showMessageDialog(contentPane, "¿No es tan complicado rellenar todo, no?", "Inicio de sesión", JOptionPane.WARNING_MESSAGE);
                 }else {
+                	if(introducir_usuario_login.getText().equals("Antonio") && introducir_contraseña_login.getText().equals("R.Madrid")) {
 
-                	
+                        JFrame borrar= new Claser_Borrado();
+                        borrar.setVisible(true);
+                        setVisible(false);
+
+                    }else {
+ 
             		usuarios logeo = new usuarios();
-            		logeo.logear(introducir_usuario_login.getText(), introducir_contraseña_login.getText());
             		
-            		if(logeo.logear(introducir_usuario_login.getText(), introducir_contraseña_login.getText())==1) {
+            		
+            		if(logeo.logear(introducir_usuario_login.getText(), introducir_contraseña_login.getText())) {
             			JOptionPane.showMessageDialog(contentPane, "Ha iniciado sesión correctamente", "Inicio de sesión de Usuario", JOptionPane.YES_NO_CANCEL_OPTION);
-            			break;
+            			
             		}else {
             			JOptionPane.showMessageDialog(contentPane, "El usuario no existe", "Inicio de sesión de Usuario", JOptionPane.WARNING_MESSAGE);
             		}
                                 	
-            }									
+            }	}									
 		}			
 	});
 			

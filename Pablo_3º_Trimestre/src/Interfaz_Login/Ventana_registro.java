@@ -126,12 +126,16 @@ public class Ventana_registro extends JFrame {
 		contraseña_registro.setBounds(10, 222, 92, 14);
 		contentPane.add(contraseña_registro);
 		
-		JButton boton_registarse_registro = new JButton("Registrarse");
-		boton_registarse_registro.setBounds(169, 279, 110, 23);
-		contentPane.add(boton_registarse_registro);
 		
+		JButton boton_registarse_registro = new JButton("Registrar");
+		boton_registarse_registro.setBounds(171, 286, 89, 23);
+		contentPane.add(boton_registarse_registro);
 		boton_registarse_registro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+			
+		
+		
+
 			
 				if (insertar_nombre_registro.getText().length()==0 || insertar_apellidos_registro.getText().length()==0 || insertar_correo_registro.getText().length()==0 || insertar_usuario_registro.getText().length()==0 || insertar_contraseña_registro.getText().length()==0) {
                     JOptionPane.showMessageDialog(contentPane, "¿Estás seguro crack de que no faltan campos por completar?", "Registro.", JOptionPane.QUESTION_MESSAGE);
@@ -146,12 +150,23 @@ public class Ventana_registro extends JFrame {
                 		
                 }
 			}
-			}});
+}
 		
+			
+		});
+			
+
 		JRadioButton ver_contraseña = new JRadioButton("Mostrar contraseña");
 		ver_contraseña.setForeground(Color.BLUE);
 		ver_contraseña.setBounds(282, 248, 126, 23);
 		contentPane.add(ver_contraseña);
+		
+		
+		
+		JLabel Fondo_registrar = new JLabel("New label");
+		Fondo_registrar.setIcon(new ImageIcon("C:\\Users\\pra00\\eclipse-workspace\\Pablo_3º_Trimestre\\src\\Imagenlogin\\nature-3082832_640.jpg"));
+		Fondo_registrar.setBounds(0, 0, 434, 361);
+		contentPane.add(Fondo_registrar);
 		ver_contraseña.addActionListener(new ActionListener() {
 			boolean activo= false;
 	        public void actionPerformed(ActionEvent e) {
@@ -167,11 +182,6 @@ public class Ventana_registro extends JFrame {
 	            }
 	        }
 	    });	
-		
-		JLabel Fondo_registrar = new JLabel("New label");
-		Fondo_registrar.setIcon(new ImageIcon("C:\\Users\\pra00\\eclipse-workspace\\Pablo_3º_Trimestre\\src\\Imagenlogin\\nature-3082832_640.jpg"));
-		Fondo_registrar.setBounds(0, 0, 434, 361);
-		contentPane.add(Fondo_registrar);
 	}
 }
 

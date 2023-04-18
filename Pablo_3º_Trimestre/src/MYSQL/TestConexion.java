@@ -113,7 +113,7 @@ public class TestConexion {
 		try {
 			cn = conexion.conectar();
 			PreparedStatement stm2 = cn.prepareStatement("DELETE FROM pgweb  WHERE Nombre = ?");
-			stm2.setString(1 , "Juan");
+			stm2.setString(1 , "Usuario");
 			
 			
 			stm2.executeUpdate();
